@@ -1,0 +1,18 @@
+<h1>Directivas Deportes componenet</h1>
+<h2>Numero de deportes: {{sports.length}}</h2>
+<div *ngIf="sports.length < 5; else plantillacodigo">
+    <p style="color:red">Hay pocos deportes</p>
+</div>
+
+<ng-container *ngTemplateOutlet="plantillacodigo">
+
+</ng-container>
+<ng-template #plantillacodigo>
+    <p style="color:green">Hay muchos deportes</p>
+</ng-template>
+
+<ul>
+    <li *ngFor="let deporte of sports">
+        {{deporte}}
+    </li>
+</ul>
