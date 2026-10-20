@@ -1,8 +1,43 @@
 <h1>Directivas Deportes componenet</h1>
-<h2>Numero de deportes: {{sports.length}}</h2>
-<div *ngIf="sports.length < 5; else plantillacodigo">
-    <p style="color:red">Hay pocos deportes</p>
-</div>
+<h2>Numero de deportes: {{deportes.length}}</h2>
+
+
+<ul>
+    @for(num of numeros; track num; let i=$index){
+        <li [class.par]="num % 2 ===0" [class.impar]="num % 2 !==0"  [class.entero]="num === 10">
+            {{i}}-{{num}}
+        </li>
+    }
+</ul>
+
+
+@for(num of numeros; track num; let i=$index){
+    <li [style.color]="num % 2 ===0 ? 'green' : 'red'">
+        {{i}}-{{num}}
+    </li>
+}
+
+
+
+
+
+@if(deportes.length< 4){
+    <h2 style="color:red">Hay pocos deportes</h2>
+
+}@else{
+    <h2 style="color:green">Hay muchos deportes</h2>
+}
+
+<ul>
+    @for(deporte of deportes; track deporte; let i =$index){
+        <li style="color:blue">
+            {{i}}-{{deporte}}
+        </li>
+    }@empty{
+        <h2 style="color:red">No hay deportes</h2>
+    }
+</ul>
+
 
 <ng-container *ngTemplateOutlet="plantillacodigo">
 
@@ -12,7 +47,7 @@
 </ng-template>
 
 <ul>
-    <li *ngFor="let deporte of sports">
+    <li *ngFor="let deporte of deportes;">
         {{deporte}}
     </li>
 </ul>
