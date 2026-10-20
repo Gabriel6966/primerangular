@@ -3,6 +3,17 @@
 
 
 <ul>
+    @for (num of numeros; track num){
+        <li [ngClass]="{
+            par: num %2 == 0,
+            impar: num %2==1,
+            entero: num === 10
+        }">
+        {{num}}</li>
+    }
+</ul>
+
+<ul>
     @for(num of numeros; track num; let i=$index){
         <li [class.par]="num % 2 ===0" [class.impar]="num % 2 !==0"  [class.entero]="num === 10">
             {{i}}-{{num}}
