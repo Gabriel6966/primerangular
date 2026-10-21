@@ -1,0 +1,31 @@
+<p>tabla-component works!</p>
+
+<form #form="ngForm" (ngSubmit)="multiplicarNumeros()">
+    <label>Numero 1:</label>
+    <input type="number" #cajanumero1>
+    <button type="submit">Multiplicar</button>
+
+    <ul>
+        @for(num of resultado; track num; let i=$index){
+            <li >
+                {{i}}-{{num}}
+            </li>
+        }
+    </ul>
+</form>
+
+<form #form="ngForm" (ngSubmit)="multiplicarNumero()">
+    <label>Numero 2:</label>
+    <input type="number" #cajanumero2 [(ngModel)]="numero2" name="numero">
+    <button type="submit">Multiplicar</button>
+    <ul>
+        @for(num of resultado2;track num; let i=$index){
+            <li>
+                {{i}}-{{num}}
+            </li>
+        }
+    </ul>
+</form>
+
+
+

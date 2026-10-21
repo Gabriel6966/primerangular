@@ -7,6 +7,7 @@ import { DeportesComponent } from '../components/deportescomponent/deportes.comp
 import { FormsModule } from '@angular/forms';
 import { FormsBindingComponent } from '../components/bindings/forms.binding.component';
 import { SumarNumerosComponent } from '../components/numeros/sumar.numeros.component';
+import { TablaComponent } from '../components/tabla-component/tabla-component';
 @NgModule({
   declarations: [
     App,
@@ -15,15 +16,10 @@ import { SumarNumerosComponent } from '../components/numeros/sumar.numeros.compo
     DeportesComponent,
     FormsBindingComponent,
     SumarNumerosComponent,
-    
+    TablaComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-  ],
-  bootstrap: [App]
+  imports: [BrowserModule, FormsModule],
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
